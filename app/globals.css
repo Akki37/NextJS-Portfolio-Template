@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+:root,
+html.dark {
+  --background: #000000;
+  --foreground: #ededed;
+  --brand: #ffffff;
+  --muted-foreground: #a1a1aa;
+  --ring: #ffffff;
+  --border: rgba(255, 255, 255, 0.15);
+  --text-stroke-color: rgba(255, 255, 255, 0.22);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.14);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.24);
+  --scrollbar-track-border: rgba(255, 255, 255, 0.08);
+}
+
+html.light {
+  --background: #ffffff;
+  --foreground: #121212;
+  --brand: #000000;
+  --muted-foreground: #666666;
+  --ring: #000000;
+  --border: rgba(0, 0, 0, 0.12);
+  --text-stroke-color: rgba(0, 0, 0, 0.15);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.14);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.24);
+  --scrollbar-track-border: rgba(0, 0, 0, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+
+  /* +2px across standard text scale */
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.25rem;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.875rem;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.625rem;
+  --text-2xl--line-height: 2.125rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.375rem;
+  --text-4xl: 2.375rem;
+  --text-4xl--line-height: 2.625rem;
+  --text-5xl: 3.125rem;
+  --text-5xl--line-height: 1;
+  --text-7xl: 4.625rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6.125rem;
+  --text-8xl--line-height: 1;
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Project carousel: depth + drag affordance (center card pops, sides recede). */
+.projects-carousel-track > .projects-carousel-slide {
+  opacity: var(--carousel-opacity, 1);
+  transform: scale(var(--carousel-scale, 1));
+  transform-origin: center center;
+  transition:
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.projects-carousel-track[data-dragging="true"] > .projects-carousel-slide {
+  transition-duration: 0.12s;
+}
+
+.projects-carousel-track[data-dragging="true"] {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(0.993);
+}
+
+.text-edge-outline {
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* Resume PDF viewer — transparent canvas, themed glass scrollbar */
+.resume-pdf-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.resume-pdf-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+.resume-pdf-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.resume-pdf-scroll::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 1px solid var(--scrollbar-track-border);
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+}
+
+.resume-pdf-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.resume-pdf-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.resume-pdf-shell {
+  background: transparent;
+}
+
+.resume-pdf-viewer {
+  position: absolute;
+  background: transparent;
+}
+
+.resume-pdf-viewer .pdfViewer {
+  background: transparent;
+}
+
+.resume-pdf-viewer .pdfViewer .page {
+  margin: 0 auto !important;
+  border: none !important;
+  background-color: rgb(255 255 255) !important;
+  box-shadow: none !important;
+}
+
+.resume-pdf-viewer .pdfViewer .canvasWrapper {
+  background: transparent !important;
+}
+
+.resume-pdf-viewer .annotationLayer a {
+  color: inherit;
+}
+

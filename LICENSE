@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 Vikas Goswami
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Additional attribution requirement
+==================================
+
+In addition to the conditions above, any public use, fork, clone, or
+redistribution of this Software (including a substantially similar public
+portfolio derived from it) must:
+
+1. Retain this copyright notice and the LICENSE file.
+2. Retain visible credit to Vikas Goswami as the original author (the site
+   footer included in this repository satisfies this).
+3. Retain a link to the original repository:
+   https://github.com/Akki37/NextJS-Portfolio-Template
+
+See NOTICE for the same terms in short form.
