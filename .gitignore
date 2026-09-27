@@ -44,9 +44,6 @@ next-env.d.ts
 .cursorrules
 CURSOR.md
 
-# local reference clone (not part of this project)
-/reference-chronark
-
 # project logos live in components/project-logos/ (generated from these SVGs)
 /public/projects/**/*.svg
 

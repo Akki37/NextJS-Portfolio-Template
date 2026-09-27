@@ -20,9 +20,6 @@ export default function ResumePdfPrefetch() {
     prefetchLink.rel = "prefetch";
     prefetchLink.href = url;
     prefetchLink.as = "fetch";
-    if (url.startsWith("http")) {
-      prefetchLink.crossOrigin = "anonymous";
-    }
     document.head.appendChild(prefetchLink);
 
     const warm = () => {

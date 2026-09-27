@@ -1,5 +1,5 @@
 /**
- * Background worker: conditional GET against Vercel Blob / CDN.
+ * Background worker: conditional GET against the same-origin resume proxy.
  * Returns 304 when unchanged, or fresh bytes + headers when updated.
  */
 self.onmessage = async (event) => {
